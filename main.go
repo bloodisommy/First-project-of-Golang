@@ -2,22 +2,30 @@ package main
 
 import "fmt"
 
-type Person struct{
-    Name string
-    Age int
-}
-
-
 func main() {
 
-    var p Person
+arr := [5]int{5, 10, 20, 30, 40}
+fmt.Println("Элементы массива: ")
 
-    fmt.Print("Введите имя: ")
-    fmt.Scanln(&p.Name)
+for i := 0; i < len(arr); i++{
+    fmt.Println(arr[i])
+}
 
-    fmt.Print("Введите возраст: ")
-    fmt.Scanln(&p.Age)
+count := 0
+    for i := 0; i <len(arr); i++{
+         if arr[i] > 10{
+              count++
+    }
+}
 
-    fmt.Printf("Имя: %s\nВозраст: %d\n", p.Name, p.Age)
+fmt.Println("Чисел больше 10: ", count)
+
+sum := 0
+    for i := 0; i < len(arr); i++{
+        sum += arr[i]
+}
+
+avg := float64(sum) / float64(len(arr))
+fmt.Println("Среднее значение: ", avg)
 
 }
