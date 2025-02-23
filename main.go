@@ -2,37 +2,22 @@ package main
 
 import "fmt"
 
+type Person struct{
+    Name string
+    Age int
+}
+
+
 func main() {
 
-	var num int
+    var p Person
 
-	fmt.Print("Введите число месяца (0-12): ")
-	fmt.Scan(&num)
+    fmt.Print("Введите имя: ")
+    fmt.Scanln(&p.Name)
 
-	switch num {
-	case 1:
-		fmt.Println("В этом месяце: 31 дней. ")
-	case 2:
-		fmt.Println("В этом месяце: 28 дней. ")
-	case 3:
-		fmt.Println("В этом месяце: 31 дней. ")
-	case 4:
-		fmt.Println("В этом месяце: 30 дней. ")
-	case 5:
-		fmt.Println("В этом месяце: 31 дней. ")
-	case 6:
-		fmt.Println("В этом месяце: 30 дней. ")
-	case 7,8:
-		fmt.Println("В этом месяце: 31 дней. ")
-	case 9:
-		fmt.Println("В этом месяце: 30 дней. ")
-	case 10:
-		fmt.Println("В этом месяце: 31 дней. ")
-	case 11:
-		fmt.Println("В этом месяце: 30 дней. ")
-	case 12:
-		fmt.Println("В этом месяце: 31 дней. ")
-	default:
-		fmt.Println("Ошибка: неизвестная операция")
-	}
+    fmt.Print("Введите возраст: ")
+    fmt.Scanln(&p.Age)
+
+    fmt.Printf("Имя: %s\nВозраст: %d\n", p.Name, p.Age)
+
 }
