@@ -4,17 +4,22 @@ import "fmt"
 
 func main() {
 
-    slice := []int{1,2,3,4,5,6}
+    myStudents := make(map[string]int)
 
-    target := 6
-    found := false
+    myStudents["Ruben"] = 19
+    myStudents["Anatoly"] = 10
+    myStudents["Miqo"] = 82
 
-    for _, value := range slice{
-        if value == target{
-            found = true
-            break
-        }
-    }
+    var oldestStudent string
+    var maxAge int
 
-    fmt.Println(found)
+   for name, age := range myStudents{
+    if age > maxAge{
+        maxAge = age
+        oldestStudent = name
+     }
+   }
+
+   fmt.Println("Самый старший студент: ", oldestStudent,",", "его возраст: ", maxAge, "лет")
+
 }
