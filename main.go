@@ -4,22 +4,22 @@ import "fmt"
 
 func main() {
 
-    myStudents := make(map[string]int)
+    myStudents := map[string]int{
+        "Ruben": 19,
+        "Anatoly": 10,
+        "Miqo": 82,
+    }
 
-    myStudents["Ruben"] = 19
-    myStudents["Anatoly"] = 10
-    myStudents["Miqo"] = 82
-
-    var oldestStudent string
-    var maxAge int
+    var youngestStudent string
+    var minAge int = 100
 
    for name, age := range myStudents{
-    if age > maxAge{
-        maxAge = age
-        oldestStudent = name
+    if age < minAge{
+        minAge = age
+        youngestStudent = name
      }
    }
 
-   fmt.Println("Самый старший студент: ", oldestStudent,",", "его возраст: ", maxAge, "лет")
+   fmt.Println("Самый младший студент: ", youngestStudent,",", "его возраст: ", minAge, "лет")
 
 }
