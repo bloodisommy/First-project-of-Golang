@@ -2,24 +2,20 @@ package main
 
 import "fmt"
 
+type Person struct{
+    Name string
+    Age int
+}
+
+func incrementAge(p *Person){
+    p.Age = p.Age + 1
+}
+
 func main() {
+  person := Person{Name: "Ruben, ", Age: 17}
+  fmt.Println("До изменений: ", person)
 
-    myStudents := map[string]int{
-        "Ruben": 19,
-        "Anatoly": 10,
-        "Miqo": 82,
-    }
+  incrementAge(&person)
 
-    var youngestStudent string
-    var minAge int = 100
-
-   for name, age := range myStudents{
-    if age < minAge{
-        minAge = age
-        youngestStudent = name
-     }
-   }
-
-   fmt.Println("Самый младший студент: ", youngestStudent,",", "его возраст: ", minAge, "лет")
-
+  fmt.Println("После изменений: ", person)
 }
